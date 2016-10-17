@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Todo</title>
+    </head>
+    <body ng-app="todo" ng-controller="TarefaController as tarefaCtrl" ng-init="tarefaCtrl.carregarTarefas()">
+        <main>
+            <form name="formTarefa" ng-submit="formTarefa.$valid && tarefaCtrl.gravar(tarefaCtrl.tarefa)">
+                <input type="text" ng-model="tarefaCtrl.responsavel" placeholder="Responsável" required>
+                <input type="text" ng-model="tarefaCtrl.dataLimite" placeholder="00/00/0000">
+                <textarea ng-model="tarefaCtrl.descricao" placeholder="Descrição" required></textarea>
+                <button type="submit">Gravar</button>
+            </form>
+            <ul>
+                <li ng-repeat="tarefa in tarefaCtrl.tarefas">
+                    <h2 ng-bind="tarefa.responsavel"></h2>
+                    <p ng-bind="tarefa.dataLimite | date:'short'"></p>
+                    <p ng-bind="tarefa.descricao"></p>
+                    <button ng-click="tarefaCtrl.deletar(tarefa)" type="button">Deletar</button>
+                </li>
+            </ul>
+        </main>
+    </body>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular-resource.js"></script>
+</html>

@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 
 let schema = new mongoose.Schema({
-    responsavel: String,
+    descricao: String,
     tarefa: String,
     dataLimite: Date
 });

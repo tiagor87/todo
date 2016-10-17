@@ -1,0 +1,18 @@
+{
+  "name": "ng1-client",
+  "homepage": "https://github.com/tiagor87/todo",
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-resource": "^1.5.8"
+  }
+}
