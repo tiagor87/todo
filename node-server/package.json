@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pre": "tsc && mongod --storageEngine=mmapv1 --dbpath C:/mongodb/data/db",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
