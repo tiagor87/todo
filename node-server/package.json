@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pre": "tsc && mongod --storageEngine=mmapv1 --dbpath C:/mongodb/data/db",
-    "start": "node index.js"
+    "pre-start": "tsc",
+    "start": "concurrently \"mongod --storageEngine=mmapv1 --dbpath C:/mongodb/data/db\" \"node index.js\""
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongoose": "^4.6.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.1.0"
   }
 }
