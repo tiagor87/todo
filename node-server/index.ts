@@ -17,6 +17,17 @@ app.get('/', bodyParser.json(), (request, response, error) => {
             error(e);
         });
 });
+app.get('/:id', bodyParser.json(), (request, response, error) => {
+    let id = request.params.id;
+    Tarefa.findById(id)
+        .exec()
+        .then(tarefa => {
+            response.json(200, tarefa);
+        },
+        e => {
+            error(e);
+        });
+});
 app.post('/', bodyParser.json(), (request, response, error) => {
     Tarefa.create(request.body)
         .then((tarefa) => {
