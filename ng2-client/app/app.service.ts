@@ -2,8 +2,16 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
+export interface IAppService {
+    get(id: string): Observable<any>;
+    query(filtro: any): Observable<any>;
+    post(tarefa: any): Observable<any>;
+    put(id: string, atualizacao: any): Observable<void>;
+    delete(id: string): Observable<void>;
+}
+
 @Injectable()
-export class AppService {
+export class AppService implements IAppService {
     private endpoint: string;
     private headers: Headers;
     private options: RequestOptions;
