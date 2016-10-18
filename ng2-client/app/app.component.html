@@ -1,0 +1,8 @@
+<h1>Ng2 ToDo App</h1>
+<button (click)="novo()">Novo</button>
+<ul>
+    <li *ngFor="let tarefa of tarefas; let i = index;">
+        <input type="text" [value]="tarefa.descricao" (change)="atualizar(tarefa._id, 'descricao', $event.target.value)">
+        <button (click)="deletar(i, tarefa._id)">Deletar</button>
+    </li>
+</ul>

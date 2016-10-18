@@ -44,3 +44,8 @@ typings
 bower_components
 ng1-client/**/*.js
 ng1-client/**/*.js.map
+
+ng2-client/**/*.js
+ng2-client/**/*.js.map
+
+

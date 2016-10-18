@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pre-start": "tsc",
-    "start": "concurrently \"mongod --storageEngine=mmapv1 --dbpath C:/mongodb/data/db\" \"node index.js\""
+    "start": "concurrently \"mongod\" \"node index.js\""
   },
   "author": "",
   "license": "ISC",
